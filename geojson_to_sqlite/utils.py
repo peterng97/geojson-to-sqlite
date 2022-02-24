@@ -101,7 +101,7 @@ def get_features(geojson_file, nl=False):
         return (json.loads(line) for line in geojson_file if line.strip())
 
     # if not nl, load the whole file
-    geojson = json.load(geojson_file, ensure_ascii=False, encoding='utf-8')
+    geojson = json.dumps(geojson_file, ensure_ascii=False, encoding='utf-8')
     if not isinstance(geojson, dict):
         raise TypeError("GeoJSON root must be an object")
 
