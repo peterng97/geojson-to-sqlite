@@ -101,6 +101,7 @@ def get_features(geojson_file, nl=False):
         return (json.loads(line) for line in geojson_file if line.strip())
 
     # if not nl, load the whole file
+    print(geojson_file)
     with open(geojson_file, encoding='utf-8') as fh:
         data = json.load(fh)
     geojson = data
